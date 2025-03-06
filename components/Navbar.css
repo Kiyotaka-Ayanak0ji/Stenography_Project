@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slide{
+    0%{
+        transform: translateY(2);
+    }
+    100%{
+        transform: translateY(-2);
+    }
+}
+
+.animate-slide{
+    animation: slide 1s ease-in-out;
+}
+

@@ -8,11 +8,20 @@ const Decrypt: React.FC = (props) => {
         setState(true);
     }
 
-    return (
-        <div className='h-auto w-full'>
+    if (state === false){
+        return (
+            <div className="h-auto w-full">
+                
+            </div>
+        )
+    }
+    else{
+        return(
+            <div className="h-auto w-full">
 
-        </div>
-    )
+            </div>
+        )
+    }
 }
 
 export default Decrypt
