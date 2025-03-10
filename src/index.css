@@ -3,9 +3,9 @@
 @tailwind components;
 
 .dark{
-  @apply h-full bg-stone-800 text-amber-300;
+  @apply h-full w-full bg-stone-800 text-amber-300;
 }
 
 .light{
-  @apply h-full bg-slate-200 text-neutral-600;
+  @apply h-full w-full bg-stone-100 text-amber-900;
 }

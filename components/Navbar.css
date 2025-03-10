@@ -3,11 +3,73 @@
 @tailwind utilities;
 
 @keyframes slide{
+    0%,100%{
+        transform: translateY(100); 
+    }
+    /* Initial position... */
+    50%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes underline{
     0%{
-        transform: translateY(2);
+        width: 0px;
+        transform: scaleX(1);
+    }
+    50%{
+        width: 100%;   /* Full width underline */
+        /* To prevent shrinking and unwanted scaling across
+        different browsers, we use this tranform: scaleX(1) command.. */
+        transform: scaleX(1);
     }
     100%{
-        transform: translateY(-2);
+        width: 50%; /* Shrink the underline */
+        transform: scaleX(1);
+    }
+}
+
+.underline-effect{
+    position: relative;
+    display: inline-block;
+}
+
+/* After the underline transition is done , then the animation 
+continues until 100% and shrinks the underline */
+
+/* Use ::after pseudo-class to create the underline animation... */
+.underline-effect::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%; /*Start with 0 width */
+    height: 2.5px; /*Height of the underline */
+    background-color: currentColor;
+    transition: width 0.4s ease-in-out;
+    animation: underline 1s ease-in-out forwards;
+}
+
+.underline-effect::after:hover{
+    /* Set the width to 100% to render a full underline on hover */
+    width: 100%;
+}
+
+@keyframes sun{
+    0%{
+        transform: rotate(-180deg);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes moon{
+    0%{
+        opacity: 0.4
+    }
+    100%{
+        opacity: 1
     }
 }
 
@@ -15,3 +77,10 @@
     animation: slide 1s ease-in-out;
 }
 
+.animate-sun{
+    animation: sun 1s ease-in-out;
+}
+
+.animate-moon{
+    animation: moon 1s ease-in-out;
+}

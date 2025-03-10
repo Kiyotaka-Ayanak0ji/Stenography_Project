@@ -9,6 +9,7 @@ interface ErrorBoundaryState {
 }
 
 class ErrorBoundary extends Component<ErrorBoundaryProps,ErrorBoundaryState> {
+    
     constructor(props: ErrorBoundaryProps) {
         //Call the parent constructor using the inherited props...
         super(props);
