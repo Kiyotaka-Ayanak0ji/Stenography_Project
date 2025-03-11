@@ -13,10 +13,6 @@
 }
 
 @keyframes underline{
-    0%{
-        width: 0px;
-        transform: scaleX(1);
-    }
     50%{
         width: 100%;   /* Full width underline */
         /* To prevent shrinking and unwanted scaling across
@@ -24,12 +20,12 @@
         transform: scaleX(1);
     }
     100%{
-        width: 50%; /* Shrink the underline */
+        width: 0%; /* Shrink the underline */
         transform: scaleX(1);
     }
 }
 
-.underline-effect{
+.underline-effect:hover{
     position: relative;
     display: inline-block;
 }
@@ -38,8 +34,8 @@
 continues until 100% and shrinks the underline */
 
 /* Use ::after pseudo-class to create the underline animation... */
-.underline-effect::after{
-    content: '';
+.underline-effect:hover::after{
+    content: " ";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -47,40 +43,34 @@ continues until 100% and shrinks the underline */
     height: 2.5px; /*Height of the underline */
     background-color: currentColor;
     transition: width 0.4s ease-in-out;
-    animation: underline 1s ease-in-out forwards;
+    animation: underline 1.2s ease-in-out;
 }
 
-.underline-effect::after:hover{
+.underline-effect:hover::after:hover{
     /* Set the width to 100% to render a full underline on hover */
     width: 100%;
 }
 
 @keyframes sun{
-    0%{
-        transform: rotate(-180deg);
-    }
     100%{
         transform: rotate(180deg);
     }
 }
 
 @keyframes moon{
-    0%{
-        opacity: 0.4
-    }
     100%{
         opacity: 1
     }
 }
 
-.animate-slide{
+.animate-slide:hover{
     animation: slide 1s ease-in-out;
 }
 
-.animate-sun{
+.animate-sun:hover{
     animation: sun 1s ease-in-out;
 }
 
-.animate-moon{
-    animation: moon 1s ease-in-out;
+.animate-moon:hover{
+    animation: moon 1.2s ease-in-out;
 }
